@@ -1,51 +1,65 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styles from "../styles/index.module.css"
-import Layout from "../components/layout"
+
+import DefaultLayout from "../layouts/default"
+import Image from "../components/image"
 import SEO from "../components/seo"
 
+import { groupBy, getDateYear } from "../utils"
+
 const IndexPage = ({ data }) => {
-  return (
-    <Layout>
-      <SEO title="Julian Mclain" />
-      <div className={styles.main}>
-        <h1 className={styles.postCount}>
-          {data.allMarkdownRemark.totalCount} Posts
-        </h1>
-        <ul>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <li key={node.id}>
-              <span className={styles.postDate}>{node.frontmatter.date}</span>
-              <Link to={node.fields.slug}>
-                <h2 className={styles.postLink}>{node.frontmatter.title}</h2>
-              </Link>
-            </li>
-          ))}
-        </ul>
+  // all posts without dates are assumed to be drafts or pages
+  // not to be added to postsList
+  const posts = data.allMarkdownRemark.edges.filter(
+    p => p.node.frontmatter.date !== null
+  )
+  const postsList = posts =>
+    posts.map(post => (
+      <li key={post.node.id}>
+        <div className="post-date code">
+          <small>{post.node.frontmatter.date}</small>
+        </div>
+        <div className="title">
+          <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>
+        </div>
+      </li>
+    ))
+
+  const postsListContainer = groupBy(posts, getDateYear)
+    .map(({ year, posts }, i) => (
+      <div key={i}>
+        <h4 className="code">{year}</h4>
+        {postsList(posts)}
       </div>
-    </Layout>
+    ))
+    .reverse()
+  return (
+    <DefaultLayout>
+      <SEO title="Home" />
+      <section>
+        <ul>{postsListContainer}</ul>
+      </section>
+    </DefaultLayout>
   )
 }
 
-export const query = graphql`
+export default IndexPage
+
+export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          excerpt
           fields {
             slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YY")
+            title
           }
         }
       }
     }
   }
 `
-
-export default IndexPage

@@ -1,32 +1,53 @@
 module.exports = {
   siteMetadata: {
     title: `Julian Mclain`,
-    description: `Ramblings on software engineering`,
+    description: `A home for my ramblings`,
     author: `@julianmclain`,
+    avatar: `https://www.dropbox.com/s/2o81mva2jjjcuc3/hawaii.jpg?raw=1`,
+    siteUrl: ``,
   },
   plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/content/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-feed`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/content/posts`,
+      },
+    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `the-plain-gatsby-starter`,
+        short_name: `the-plain-gatsby`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

@@ -1,37 +1,24 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  // The actions.createNodeField fn is how you add fields to a node.
-  const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
-    // At this point we know `node` is a MarkdownRemark node.
-    // Gatsby provides `createFilePath` fn for creating slugs.
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    // Add slug to the MarkdownRemark node
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-  }
-}
-
-exports.createPages = async ({ graphql, actions }) => {
+// Iterate over the results and create a page for each
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
+
   // Graphql calls return a promise
-  const result = await graphql(`
-    query {
-      allMarkdownRemark {
+  result = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             fields {
               slug
+            }
+            frontmatter {
+              title
             }
           }
         }
@@ -39,16 +26,33 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  const posts = result.data.allMarkdownRemark.edges
+
   // Iterate over the results and create a page for each
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  posts.forEach(({ node }, index) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.js`),
+      component: path.resolve(`src/layouts/post.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables
         slug: node.fields.slug,
+        prev: index === 0 ? null : posts[index - 1].node,
+        next: index === posts.length - 1 ? null : posts[index + 1].node,
       },
     })
   })
+}
+
+// create the slugs programatically instead of specifying a path in the frontmatter
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
 }

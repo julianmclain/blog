@@ -1,35 +1,38 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import styles from "../styles/header.module.css"
+import { Location } from "@reach/router"
 
-const Header = ({ siteTitle }) => (
-  <header className={styles.header}>
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        <Link to="/" className={styles.link}>
-          {siteTitle}
-        </Link>
-      </h1>
-      <nav className={styles.nav}>
-        <ul className={styles.list}>
-          <li className={styles.navItem}>
-            <Link to="/about" className={styles.link}>
-              About
+const Header = ({ avatar }) => (
+  <header className="logo">
+    <Location>
+      {({ location }) => {
+        return location.pathname == "/" ? (
+          <div>
+            <Link to="/about/">
+              <img src={avatar} className="logo-avatar" />
             </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+            <span className="logo-prompt code">About the Author</span>
+          </div>
+        ) : (
+          <div>
+            <Link to="/">
+              <img src={avatar} className="logo-avatar" />
+            </Link>
+            <span className="logo-prompt code">Back Home</span>
+          </div>
+        )
+      }}
+    </Location>
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  avatar: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  avatar: ``,
 }
 
 export default Header
