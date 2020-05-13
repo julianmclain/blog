@@ -38,8 +38,8 @@ exports.createPages = async ({ actions, graphql }) => {
         // in page queries as GraphQL variables
         slug: node.fields.slug,
         prev: index === 0 ? null : posts[index - 1].node,
-        next: index === posts.length - 1 ? null : posts[index + 1].node,
-      },
+        next: index === posts.length - 1 ? null : posts[index + 1].node
+      }
     })
   })
 }
@@ -52,7 +52,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
+      value: slug
     })
   }
 }

@@ -7,7 +7,7 @@ const Header = ({ avatar }) => (
   <header className="logo">
     <Location>
       {({ location }) => {
-        return location.pathname == "/" ? (
+        return location.pathname === "/" ? (
           <div>
             <Link to="/about/">
               <img src={avatar} className="logo-avatar" />
@@ -28,11 +28,11 @@ const Header = ({ avatar }) => (
 )
 
 Header.propTypes = {
-  avatar: PropTypes.string,
+  avatar: PropTypes.string
 }
 
 Header.defaultProps = {
-  avatar: ``,
+  avatar: ``
 }
 
 export default Header
