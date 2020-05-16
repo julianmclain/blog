@@ -1,9 +1,16 @@
 import React from "react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Footer = () => (
-  <div className="footer">
-    <span className="block">@julianmclain</span>
-    <span className="block">LinkedIn</span>
+  <div className="footer footer-contact">
+    <span className="block">
+      <FaGithub />
+      <a href="https://github.com/julianmclain"> julianmclain</a>
+    </span>
+    <span className="block footer-contact">
+      <FaLinkedin />
+      <a href="https://www.linkedin.com/in/julianrmclain/"> LinkedIn</a>
+    </span>
   </div>
 )
 
