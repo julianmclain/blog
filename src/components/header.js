@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import { Location } from "@reach/router"
+import avatar from "../images/avatar.jpg"
 
-const Header = ({ avatar }) => (
+const Header = () => (
   <header className="logo">
     <Location>
       {({ location }) => {
@@ -26,13 +26,5 @@ const Header = ({ avatar }) => (
     </Location>
   </header>
 )
-
-Header.propTypes = {
-  avatar: PropTypes.string
-}
-
-Header.defaultProps = {
-  avatar: ``
-}
 
 export default Header

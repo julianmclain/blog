@@ -20,14 +20,13 @@ const DefaultLayout = ({ children }) => (
         site {
           siteMetadata {
             title
-            avatar
           }
         }
       }
     `}
     render={data => (
       <>
-        <Header avatar={data.site.siteMetadata.avatar} />
+        <Header />
         <div id="content">{children}</div>
         <Footer />
       </>
@@ -36,7 +35,7 @@ const DefaultLayout = ({ children }) => (
 )
 
 DefaultLayout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default DefaultLayout
