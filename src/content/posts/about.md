@@ -2,6 +2,4 @@
 title: About
 ---
 
-**Less is more..**
-
-You can contact me at: **inbox@julianmclain.com**
+You can contact me at: julianrmclain(at gmail dot com)
