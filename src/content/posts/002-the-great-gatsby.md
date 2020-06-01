@@ -3,7 +3,7 @@ title: "The Great Gatsby" date: 2020-05-30
 ---
 
 I've been watching the Gatsby snowball rolling downhill and accumulating mass
-during the last year or two. Back when commuting was still a thing, it seemed
+over the last year or two. Back when commuting was still a thing, it seemed
 like every week I would listen to a podcast either adding more fuel to
 the Gatsby hype machine or debating it's merits. Regardless of who history will
 prove right, it's impossible to deny that Gatsby is making a big splash. With
@@ -58,8 +58,8 @@ were surprised when their content was suddenly put behind a login wall.
 
 For a simple blog, React and Graphql are probably overkill, but I was still sold
 on the perceived simplicity of the how the site would ultimately be served.
-After using Gatsby to run your production build, you're just left with HTML,
-CSS, and JS. More interactive web apps are going to need to figure out
+After using Gatsby to run your production build, you're just left with just HTML,
+CSS, and JS files. More interactive web apps are going to need to figure out user
 authentication and an API layer, but I won't need any of that. Plus, I already
 take a ton of notes in markdown files, so I'm used to the workflow.
 
