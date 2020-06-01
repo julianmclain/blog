@@ -25,8 +25,8 @@ because I've heard it from so many experienced developers I know or follow!
 
 ## What's next?
 
-So, this blog a place to backup my thoughts and share them with the broader
-developer community. You can expect future writings about my journey as a
+So, this blog a place to store my notes and thoughts in case anyone finds them
+helpful or interesting. You can expect future writings about my journey as a
 budding engineer and technologies I find interesting. I don't exactly know which
 topics those are yet, but don't worry. They're going to be great!
 
