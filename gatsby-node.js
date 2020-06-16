@@ -1,7 +1,6 @@
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 
-// Iterate over the results and create a page for each
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 

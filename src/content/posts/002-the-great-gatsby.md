@@ -3,7 +3,7 @@ title: "The Great Gatsby" date: 2020-05-30
 ---
 
 I've been watching the Gatsby snowball rolling downhill and accumulating mass
-over the last year or two. Back when commuting was still a thing, it seemed
+over the last year or two. Pre-COVID-19 when commuting was still a thing, it seemed
 like every week I would listen to a podcast either adding more fuel to
 the Gatsby hype machine or debating it's merits. Regardless of who history will
 prove right, it's impossible to deny that Gatsby is making a big splash. With
@@ -75,10 +75,10 @@ Gatsby](https://github.com/wangonya/the-plain-gatsby) by
 always a tedious trek through the support docs, but after another 1 or 2 hours that was
 ready to go too. Overall, not a bad upfront cost.
 
-Now I'm off to the races. The process of writing markdown files, previewing the
+Now I'm off to the races! The process of writing markdown files, previewing the
 content live on the development server, and deploying the production build has
 been silky smooth. It's still early, but this jury is deliberating in favor of
-finding Gatsby innocent on charges of being just another over-engineered JS
+finding Gatsby innocent on all charges of being just another over-engineered JS
 framework.
 
 [^1]: [AWS s3 pricing](https://aws.amazon.com/s3/pricing/)
