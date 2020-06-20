@@ -10,7 +10,7 @@ brief intro to Gatsby plugins, share my notes on `gatsby-plugin-mailchimp`,
 process while writing `gatsby-plugin-iterable`.
 
 You can check out the finished product here:
-[gatsby-plugin-iterable](https://www.gatsbyjs.org/packages/gatsby-plugin-iterable/).
+[gatsby-plugin-iterable](https://github.com/julianmclain/gatsby-plugin-iterable).
 
 ## Background
 
@@ -168,8 +168,7 @@ component "makes it easy to track clicks on oubound links."
 ```javascript
 // README example
 import { OutboundLink } from "gatsby-plugin-google-analytics"
-
-<OutboundLink href="https://www.gatsbyjs.org/">
+;<OutboundLink href="https://www.gatsbyjs.org/">
   Visit the Google Analytics plugin page!
 </OutboundLink>
 ```

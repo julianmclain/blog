@@ -58,7 +58,7 @@ were surprised when their content was suddenly put behind a login wall.
 
 For a simple blog, React and Graphql are probably overkill, but I was still sold
 on the perceived simplicity of the how the site would ultimately be served.
-After using Gatsby to run your production build, you're just left with just HTML,
+After using Gatsby to run your production build, you're left with just HTML,
 CSS, and JS files. More interactive web apps are going to need to figure out user
 authentication and an API layer, but I won't need any of that. Plus, I already
 take a ton of notes in markdown files, so I'm used to the workflow.
