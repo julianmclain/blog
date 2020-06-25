@@ -20,14 +20,14 @@ A new array with the same elements, sorted from smallest to largest.
 
 ### Description:
 
-Main function `mergesort(array)`
+`mergesort(array)` subroutine:
 
 - If the array has length 1 or less, return a copy. It's already sorted.
 - Recursively sort the first half of the input array.
 - Recursively sort the second half of the input array.
 - Merge the two sorted sub-arrays into one sorted array.
 
-Subroutine `merge(left, right)`
+`merge(left, right)` subroutine:
 
 - Create an output array of length `left` + `right`
 - Store a pointer to the first element in left, `i`
@@ -169,3 +169,5 @@ work per level_ and the _number of levels_.
 Logarithms of a different base only differ by a constant factor so we can eliminate
 the base: _O_(_n_ log _n_). There it is! The Master Method holds up, and we have an
 intuitive understanding for why mergesort runs in _O_(_n_ log _n_) time.
+
+Corrections are appreciated! If you see an error, please create a [Github issue](https://github.com/julianmclain/blog/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
