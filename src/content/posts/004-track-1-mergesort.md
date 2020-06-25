@@ -18,7 +18,7 @@ an array of _n_ elements.
 
 A new array with the same elements, sorted from smallest to largest.
 
-### Description:
+### Description
 
 `mergesort(array)` subroutine:
 
@@ -39,6 +39,8 @@ A new array with the same elements, sorted from smallest to largest.
   - If the current right element `right[j]` is less than the current left
     element `left[i]`, copy the right element `right[i]` to the output array at
     position `k`. Increment the pointer `j`.
+
+### Code
 
 ```python
 def mergesort(num_list):
@@ -68,7 +70,7 @@ def merge(l, r):
     return sorted_list
 ```
 
-Source - [Algorithms
+Read the full source - [Algorithms
 Mixtape - mergesort](https://github.com/julianmclain/algorithms-mixtape/tree/master/src/mergesort)
 
 Note - the `merge` implementation doesn't exactly match the description I gave.
@@ -80,7 +82,7 @@ mergesort is a canonical "divide-and-conquer" algorithm. It splits the input
 array into two sub-problems, recursively solves each sub-problem, and then
 combines the solutions to the sub-problems.
 
-### Asymptotic run time
+### Asymptotic runtime
 
 The [Master
 Method](<https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)>)
@@ -99,7 +101,7 @@ For mergesort, we fill in the following constants:
 - _b_ = 2
 - _d_ = 1
 
-This puts the run time in category 1 of 3 since _a_ = _b<sup>d</sup>_. Category 3 run
+This puts the run time in category 1 of 3 since _a_ = _b<sup>d</sup>_. Category 1 run
 times are defined as _T_(_n_) = _O_(_n_<sup>_d_</sup> log _n_). Filling in the
 _d_ parameter, we end up with a run time of:
 
@@ -170,4 +172,4 @@ Logarithms of a different base only differ by a constant factor so we can elimin
 the base: _O_(_n_ log _n_). There it is! The Master Method holds up, and we have an
 intuitive understanding for why mergesort runs in _O_(_n_ log _n_) time.
 
-Corrections are appreciated! If you see an error, please create a [Github issue](https://github.com/julianmclain/blog/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
+Corrections are appreciated - if you see an error, please create a [Github issue](https://github.com/julianmclain/blog/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
