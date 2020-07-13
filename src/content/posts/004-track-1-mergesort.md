@@ -32,17 +32,19 @@ A new array with the same elements, sorted from smallest to largest.
 - Create an output array of length `left` + `right`
 - Store a pointer to the first element in left, `i`
 - Store a pointer to the first element in right, `j`
-- Traverse the indicies of the output array as `k`:
-  - If the current left element `left[i]` is less than the current right
-    element `right[j]`, copy the left element `left[i]` to the output array at
-    position `k`. Increment the pointer `i`.
-  - If the current right element `right[j]` is less than the current left
-    element `left[i]`, copy the right element `right[i]` to the output array at
-    position `k`. Increment the pointer `j`.
+- Traverse the indicies of the output array as `k`
+- If the current left element `left[i]` is less than the current right element
+  `right[j]`, copy the left element `left[i]` to the output array at position
+  `k`. Increment the pointer `i`.
+- If the current right element `right[j]` is less than the current left element
+  `left[i]`, copy the right element `right[i]` to the output array at position
+  `k`. Increment the pointer `j`.
 
 ### Code
 
 ```python
+# mergesort.py
+
 def mergesort(num_list):
     if len(num_list) <= 1:
         return num_list[:]
@@ -172,4 +174,4 @@ Logarithms of a different base only differ by a constant factor so we can elimin
 the base: _O_(_n_ log _n_). There it is! The Master Method holds up, and we have an
 intuitive understanding for why mergesort runs in _O_(_n_ log _n_) time.
 
-Corrections are appreciated - if you see an error, please create a [Github issue](https://github.com/julianmclain/blog/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
+Corrections are appreciated - if you see an error, please create a [Github issue](https://github.com/julianmclain/blog/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) 🍻.
