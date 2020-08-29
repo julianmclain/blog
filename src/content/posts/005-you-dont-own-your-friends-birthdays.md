@@ -26,7 +26,7 @@ that doesn't support Facebook's revenue model.
 ## Focus vs. Friendship
 
 I ran head-on into this dilemma thanks to COVID-19. Normally, I like to run my
-phone and laptop like a 15th century convent. Almost all notifications are
+phone and laptop like a 15th century monestary. Almost all notifications are
 disabled, my phone uses grayscale, my desktop and lockscreen are minimally
 adorned, etc... This approach is great for productivity, but unfortunately not
 great for keeping in touch with friends and family. It's turned me into the
@@ -52,7 +52,7 @@ Pythonista named Mo Beigi wrote [fb2cal](https://github.com/mobeigi/fb2cal), a
 script to scrape your friend's Facebook profiles and write the birthdays to a
 file on your machine.
 
-fb2cal is a solution to the "Facebook UI gauntlet" problem, but it's less than
+fb2cal is one solution to the "Facebook UI gauntlet" problem, but it's less than
 ideal for a bunch of reasons. The biggest one is that it requires your Facebook
 credentials, the Internet equivalent of giving a stranger a copy of your house
 keys. There's nothing to stop fb2cal from logging in and changing your password,
