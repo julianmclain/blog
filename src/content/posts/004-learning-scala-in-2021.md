@@ -113,7 +113,7 @@ that these libraries are often industry standards.
 The deeper I got into Hands on Scala, the more I realized that it didn't align
 with my goals. I was reading this book in order to be more productive at work,
 so it really didn't benefit me to learn Haoyi's ecosystem of libraries. I'm
-already familiar with the concept of JSON serialization, so learning uPickle
+already familiar with the concept of JSON serialization, so learning uJson
 didn't really make it easier to learn Play JSON. For whatever reason, picking up
 Play JSON was like hitting a brick wall. The same situation repeated itself for
 almost every library he introduced. Mill is a pretty straightforward build
